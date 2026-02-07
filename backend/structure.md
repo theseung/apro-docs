@@ -63,14 +63,14 @@ htdocs/
 │   │   ├── PersonalityCodeSeeder.php
 │   │   ├── PersonalityQuestionSeeder.php
 │   │   └── ...
-│   └── database.sqlite     # 개발용 DB
+│   └── seeders/            # DB 시더
 │
 ├── routes/
 │   ├── api.php             # API 라우트 (25KB)
 │   └── web.php             # 웹 라우트 (40KB)
 │
 ├── resources/
-│   ├── js/                 # Inertia.js 프론트엔드 (현재 비활성)
+│   ├── js/                 # 프론트엔드 (미사용)
 │   └── views/              # Blade 템플릿
 │
 ├── storage/

@@ -43,6 +43,43 @@ composer run dev
 
 자세한 설치 가이드는 [시작하기](getting-started/installation.md)를 참조하세요.
 
+## 향후 리팩토링 권장사항
+
+### 1. PersonalityController 분리 (우선순위: 높음)
+
+현재 `PersonalityController`가 3,426줄로 너무 큽니다. 다음과 같이 분리 권장:
+
+```
+PersonalityController → 검사 CRUD만
+PersonalityApplicantController → 응시자 관리
+PersonalitySheetController → 검사지 관리
+PersonalityCodeController → 코드 관리
+PersonalityQuestionController → 문항 관리
+```
+
+### 2. 3가지 검사 타입 공통 로직 추출 (우선순위: 중간)
+
+`ApplicantController`의 로그인 로직 등 3가지 검사 타입(Personality, Reputation, Multifaceted)에서 반복되는 코드를 Trait이나 추상 클래스로 추출 권장:
+
+```php
+// 예시: app/Traits/ApplicantLoginTrait.php
+trait ApplicantLoginTrait
+{
+    protected function findAndValidateApplicant($model, $company, $request, $testIdField)
+    {
+        $applicant = $model::where('company_id', $company->id)
+            ->where('id', $request->id)
+            ->where($testIdField, $request->test_id)
+            ->first();
+
+        if ($applicant && $applicant->pw === $request->pw) {
+            return $applicant;
+        }
+        return null;
+    }
+}
+```
+
 ## 문서 구조
 
 1. **[시작하기](getting-started/)** - 설치 및 환경 설정

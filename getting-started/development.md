@@ -100,10 +100,7 @@ npm run types         # TypeScript 타입 체크
 ### 프론트엔드 프로덕션 빌드
 
 ```bash
-# htdocs (Inertia.js)
-cd htdocs
-npm run build
-npm run build:ssr  # SSR 포함
+# apro (관리자)
 
 # apro (관리자)
 cd apro

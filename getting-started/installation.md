@@ -42,8 +42,13 @@ php artisan key:generate
 ### 3. 데이터베이스 설정
 
 ```bash
-# SQLite 파일 생성 (개발용)
-touch database/database.sqlite
+# .env 파일에서 MySQL 설정 확인
+# DB_CONNECTION=mysql
+# DB_HOST=your-host
+# DB_PORT=3306
+# DB_DATABASE=apro
+# DB_USERNAME=apro
+# DB_PASSWORD=your-password
 
 # 마이그레이션 실행
 php artisan migrate
@@ -106,12 +111,12 @@ chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
 ```
 
-### SQLite 연결 오류
+### MySQL 연결 오류
 
 ```bash
-# 파일 존재 확인
-ls -la database/database.sqlite
+# .env 파일의 DB 설정 확인
+cat .env | grep DB_
 
-# 권한 확인
-chmod 664 database/database.sqlite
+# MySQL 서버 연결 테스트
+php artisan tinker --execute="DB::connection()->getPdo()"
 ```

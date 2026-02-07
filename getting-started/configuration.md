@@ -11,15 +11,13 @@ APP_KEY=base64:xxxxx
 APP_DEBUG=true
 APP_URL=http://localhost
 
-# 데이터베이스
-DB_CONNECTION=sqlite
-# 또는 MySQL
-# DB_CONNECTION=mysql
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=apro
-# DB_USERNAME=root
-# DB_PASSWORD=
+# 데이터베이스 (MySQL)
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=apro
+DB_USERNAME=apro
+DB_PASSWORD=your-password
 
 # 세션
 SESSION_DRIVER=database

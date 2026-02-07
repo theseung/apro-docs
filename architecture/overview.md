@@ -45,7 +45,7 @@
 └──────────────────────────────┼───────────────────────────────────┘
                                ▼
                     ┌─────────────────────┐
-                    │      SQLite/MySQL    │
+                    │        MySQL         │
                     │      Database        │
                     └─────────────────────┘
 ```
@@ -59,11 +59,7 @@
 | PHP | 8.2+ | 서버 사이드 |
 | Laravel | 12.x | 웹 프레임워크 |
 | Sanctum | 4.x | API 인증 |
-| Inertia.js | 2.x | SPA 프레임워크 |
-| DOMPDF | 3.x | PDF 생성 |
 | PhpSpreadsheet | 5.x | Excel 처리 |
-| mPDF | 8.x | PDF 생성 (대안) |
-| Browsershot | 5.x | 스크린샷/PDF |
 
 ### 프론트엔드 (apro)
 

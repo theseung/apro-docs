@@ -2,8 +2,7 @@
 
 ## 개요
 
-- **개발 환경**: SQLite
-- **운영 환경**: MySQL 또는 PostgreSQL
+- **데이터베이스**: MySQL
 - **Primary Key**: 대부분 UUID (`idx` 필드)
 - **마이그레이션**: Laravel Migration 사용
 
